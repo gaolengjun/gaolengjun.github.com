@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="高冷俊的技术博客">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="高冷俊的技术博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="高冷俊">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+<title>高冷俊的技术博客</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">高冷俊的技术博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">专注于编程学习，爬虫研究</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-relaxing-moment"><a href="/music/" rel="section"><i class="fa fa-coffee fa-fw"></i>放松时刻</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">高冷俊</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/l119520@outlook.com" title="E-Mail → l119520@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/19/Python%E7%88%AC%E8%99%AB%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%9A%84%E4%B8%89%E5%A4%A7%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/19/Python%E7%88%AC%E8%99%AB%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%9A%84%E4%B8%89%E5%A4%A7%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%BA%93/" class="post-title-link" itemprop="url">Python爬虫必知必会的三大网页解析库</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-19 21:53:06" itemprop="dateCreated datePublished" datetime="2021-02-19T21:53:06+08:00">2021-02-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-20 18:22:25" itemprop="dateModified" datetime="2021-02-20T18:22:25+08:00">2021-02-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">python爬虫</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="掌握这三大网页解析库，基本可以解决100-网页提取问题"><a href="#掌握这三大网页解析库，基本可以解决100-网页提取问题" class="headerlink" title="掌握这三大网页解析库，基本可以解决100%网页提取问题"></a>掌握这三大网页解析库，基本可以解决100%网页提取问题</h2><h3 id="xpath"><a href="#xpath" class="headerlink" title="xpath"></a>xpath</h3><ul>
+<li>最方便最快捷的解析方式</li>
+</ul>
+<p>解析网页xpath是首选，它易读，方便书写，使用起来非常简单。使用谷歌或edge浏览器可以打开元素，直接书写xpth，所见即所得。</p>
+<p>书写xpath语法，所选节点会在html中实时高亮显示。<br><img src="https://ftp.bmp.ovh/imgs/2021/02/7c45bf814645704c.png" alt="xpath演示"></p>
+<!-- ![xpath演示](Python爬虫必知必会的三大网页解析库/xpath.png) -->
+
+<p>xpath语法理解起来也很简单，“/”表示选择直接子节点，例如：/div/p，p是div下的直接子节点；“//”表示选择非直接子节点，例如：/div//p，p和div之间还有其它节点。</p>
+<p>使用“/”选择可以联想到电脑里的资源管理器的资源路径，一个意思，“//”在xpath选择中最常用，“/”逐级选择，使用“//”跳选。</p>
+<p>//div[@class=”list”]//a//p，中括号里的写法是指定该div的class属性，进一步限定选择。最后的p标签才是我们选择的对象，如果你要选择p标签的文本，那么后面还需要跟上“/text()”，完整写法：//div[@class=”list”]//a//p/text()</p>
+<p>爬取url是家常便饭，xpath获取某标签中的url也是非常容易，来看看吧！<br><img src="https://ftp.bmp.ovh/imgs/2021/02/1c913be1185cd7a6.png" alt="xpath获取url"></p>
+<!-- ![xpath演示](Python爬虫必知必会的三大网页解析库/xpath选择url.png) -->
+<p>是的，只需要在最后的标签加上“/@href”即可获取href属性对应的url。</p>
+<p>非常容易！</p>
+<p>在这里仅作几个例子演示，xpath选择方式非常多，掌握其中常用几种，基本可以解决99%的网页。</p>
+<p>想完整学习xpath，可以直接通过搜索引擎搜索，这样的视频教程和博客文档多如牛毛，在python语言中，使用xpath解析网页，首先安装使用lxml模块进行字符串转换成html，因为xpath只能处理html文档，在这里我将我学习lxml和xpath笔记分享出来。</p>
+<p><a target="_blank" rel="noopener" href="https://share.mubu.com/doc/d3yY--gYM">xpath语法</a> <a target="_blank" rel="noopener" href="https://share.mubu.com/doc/3XGR5RgY0Yk">lxml提取数据</a></p>
+<h3 id="pyquery"><a href="#pyquery" class="headerlink" title="pyquery"></a>pyquery</h3><ul>
+<li>最佳CSS选择器模块</li>
+</ul>
+<p>pyquery是个非常不错的css选择器模块，熟知前端的都知道，css选择器有多方便，不亚于xpath。bs4虽然很受欢迎，很主流，但选择节点太繁琐，步骤多。pyquery真心不错，不使用xpath，pyquery是我最爱使用的网页解析库，它有多好用来演示下。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2021/02/5b130571753a096a.png" alt="pyquery"></p>
+<!-- ![xpath演示](Python爬虫必知必会的三大网页解析库/pyquery选择影评作者.png) -->
+<ul>
+<li>爬取豆瓣影评作者</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line">item_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">100</span>,<span class="number">20</span>):</span><br><span class="line">    url = <span class="string">f&#x27;https://movie.douban.com/review/best/?start=<span class="subst">&#123;i&#125;</span>&#x27;</span></span><br><span class="line"></span><br><span class="line">    r = httpx.get(url,headers = headers).text</span><br><span class="line"></span><br><span class="line">    <span class="comment"># pyquery解析</span></span><br><span class="line">    doc = pq(r)</span><br><span class="line">    items = doc(<span class="string">&#x27;.review-list .main-hd a.name&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> author <span class="keyword">in</span> items.items():</span><br><span class="line">        item_list.append(author.text())</span><br><span class="line"></span><br><span class="line">print(item_list)</span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<ul>
+<li>[‘刷鞋大王’, ‘R荣十二’, ‘珍珠奶猹’, ‘朝暮雪’, ‘天下行走’, ‘保温杯喝冷水’, ‘枨不戒’, ‘難捨難分’, ‘江湖骗子’, ‘筷子兄弟-鸡腿’, ‘看电影看到死’, ‘上下楼梯靠右走’, ‘lanrachel’, ‘沉睡的小鹏’, ‘粉粿症候群’, ‘马尾鱼’, ‘阿甘正二’, ‘小良’, ‘之方’, ‘Fenster’, ‘咦，那个胖大海’, ‘错是世界不是我’, ‘胡萝卜糊了’, ‘应该没什么不同’, ‘雨梨’, ‘Gaaitung-Hok’, ‘黄黄国王’, ‘Hoesdont_tryme’, ‘啊？啊！’, ‘莎士比亚的妹妹’, ‘诸事大吉’, ‘岁月静好’, ‘大葱’, ‘沅有芷兮’, ‘倩儿的小岛’, ‘滔滔涛涛’, ‘地下游艺宫’, ‘沐如蓝’, ‘元宵灯会’, ‘正离子-雪’, ‘ROSES’, ‘Thelonious’, ‘王兆鑫-DOC’, ‘陈年老大’, ‘Kubrick’, ‘追剧练习生’, ‘奈此朱梁跋扈何’, ‘光’, ‘ououou’, ‘Yilianmengbi🍁’]</li>
+</ul>
+<p>pyquery仅用了三行代码，第一行代码css选择，第二行代码遍历出所有作者名称添加到列表，简单高效！</p>
+<h3 id="re-正则表达式"><a href="#re-正则表达式" class="headerlink" title="re 正则表达式"></a>re 正则表达式</h3><ul>
+<li>数据过滤提取万金油</li>
+</ul>
+<p>你是谁？你旁边都有啥？</p>
+<p>这就是正则表达式提取数据的主要思路。</p>
+<ul>
+<li>以豆瓣音乐为例</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 Edg/88.0.705.74&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Cookie&#x27;</span>: <span class="string">&#x27;bid=BrkWGYAPap4; __yadk_uid=lw6P9KtcK917gHOxQ7KFBg9ZAO6qM2Zc; _vwo_uuid_v2=D455FFECD444260935D06DABA5027F6F2|432066f1de62232e73a12fc1b7d76cd5; __gads=ID=79f66f4cd94a5914-2273543234c50089:T=1608093744:RT=1608093744:S=ALNI_MYwKkM1dNWT2eboajA5R_tpqDKMoQ; ll=&quot;118259&quot;; viewed=&quot;2995812_1401853_1431596_6816154_3040149&quot;; ct=y; gr_user_id=8bb1c9a9-726f-41ce-a3e1-ac45518dccfb; __utma=30149280.451464343.1608093740.1613747695.1613807914.17; __utmc=30149280; __utmz=30149280.1613807914.17.9.utmcsr=cn.bing.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmt=1; gr_session_id_22c937bbd8ebd703f2d8e9445f7dfd03=167484ac-1d68-49da-9138-6c24dc423db6; gr_cs1_167484ac-1d68-49da-9138-6c24dc423db6=user_id%3A0; __utmt_douban=1; ap_v=0,6.0; gr_session_id_22c937bbd8ebd703f2d8e9445f7dfd03_167484ac-1d68-49da-9138-6c24dc423db6=true; _pk_ref.100001.afe6=%5B%22%22%2C%22%22%2C1613807982%2C%22https%3A%2F%2Fcn.bing.com%2F%22%5D; _pk_ses.100001.afe6=*; _pk_id.100001.afe6=0cde17f985e0e19a.1608093739.8.1613808129.1608277773.; __utmb=30149280.5.10.1613807914&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r = httpx.get(<span class="string">&#x27;https://music.douban.com/chart&#x27;</span>,headers = headers).text</span><br><span class="line">result = re.findall(<span class="string">&#x27;&lt;a href=&quot;javascript:;&quot;&gt;(.*?)&lt;/a&gt;&#x27;</span>,r)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<ul>
+<li>[‘无名曲’, ‘PAP’, ‘酒色器迷 （寒山尺八 叁）’, ‘Ⅷ’, ‘五楼’, ‘Fade out’, ‘162-气人的小孩-4500’, ‘ARASHI’, ‘想告诉你她已经离开’, ‘致青春-Youth’, ‘近视-2021.01’, ‘《shamed》伴奏demo’, ‘风吟 Wind Singing’, ‘北沙滩’, ‘寻光’, ‘RED（五首钢琴曲以及念诗）’, ‘十一月 山间晚祷（古筝独奏 陈虹蕗 ）’, ‘海战Moba_乡村_Boss’, ‘阳春（神奇秘谱）丝弦-丹泉琴-2021-01-24_20-40’, ‘rocket’]</li>
+</ul>
+<p>python中的正则表达式是re模块，在爬虫中，使用最多的方法就是findall函数，顾名思义查找全部。括号里填入的第一个参数就是正则表达式，第二个参数是待匹配的文本。</p>
+<p>‘&lt;a href=”javascript:;”&gt;(.*?)</a>‘，这段正则中的圆括号里才是我们要提取的内容，而圆括号外只是参考，告诉正则，你要提取的内容它的左边是什么，右边是什么。圆括号里的“.*?”,点表示匹配任意符号，星号匹配零次或多次，问号是非贪婪模式匹配。</p>
+<p>很多人觉得正则表达式复杂，因为正则表达式的元字符非常多。什么是元字符？“.*?”这三个就是元字符，它们分别匹配某一类型的数据。再比如，一个“+”在正则中就表示匹配一次或多次，“\d”就表示匹配数字。“\D”就表示匹配非数字……元字符太多了，这里介绍不完的。学习正则不必把正则所有元字符死记硬背，只需要掌握正则在不同编程语言中的语法使用即可，当提取某一类型的数据时，直接搜索引擎搜索好了，这样的资料太多了，很好找，使用起来就像查字典般容易。</p>
+<p>正则搜索内容最高效，它不仅仅只针对网页，任何文本字符串类型都支持，所以说它是万金油。xpath提取网页数据是首选，如果html文档中的数据嵌入在javascript标签中，xpath就无能为力，何以解忧？唯有正则。</p>
+<p>最后，奉上我的正则学习笔记。<br><a target="_blank" rel="noopener" href="https://share.mubu.com/doc/7HV42Ee9a-H">python正则表达式学习笔记</a></p>
+<p>以上就是我使用python爬虫最推荐的三大网页解析库，熟练掌握任何网页不在话下，轻而易举过滤数据，精确提取。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/19/node.js%E5%88%86%E5%8F%B7%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/19/node.js%E5%88%86%E5%8F%B7%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">node.js分号问题</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-02-19 19:56:00 / 修改时间：19:57:10" itemprop="dateCreated datePublished" datetime="2021-02-19T19:56:00+08:00">2021-02-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="node-js分号问题"><a href="#node-js分号问题" class="headerlink" title="node.js分号问题"></a>node.js分号问题</h1><p><strong>js是可以省略分号的，但要注意以下几种情况</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;hello world&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">say()</span><br><span class="line"></span><br><span class="line">;(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;hell&#x27;</span>)</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">;[<span class="string">&#x27;苹果&#x27;</span>,<span class="string">&#x27;香蕉&#x27;</span>].forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(item)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">;<span class="string">`hello`</span>.toString()</span><br></pre></td></tr></table></figure>
+<p>以：</p>
+<ol>
+<li>（）</li>
+<li> []</li>
+<li> ``</li>
+</ol>
+<p>开头会报错，需要在这些符号前添加分号（；），或者添加“！”和“~”，一般建议添加分号。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E4%BF%A1%E6%81%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E7%8A%B6%E6%80%81%E4%BF%A1%E6%81%AF/" class="post-title-link" itemprop="url">获取文件状态信息</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 21:50:00" itemprop="dateCreated datePublished" datetime="2021-02-14T21:50:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:06:52" itemprop="dateModified" datetime="2021-02-15T22:06:52+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="获取文件状态信息"><a href="#获取文件状态信息" class="headerlink" title="获取文件状态信息"></a>获取文件状态信息</h6><p>异步操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line">fs.stat(path.join(__dirname,<span class="string">&#x27;file.txt&#x27;</span>),<span class="function"><span class="keyword">function</span> (<span class="params">err,stat</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(stat);  <span class="comment">//获取文件信息</span></span><br><span class="line">        <span class="built_in">console</span>.log(stat.isDirectory());    <span class="comment">//判断是不是目录</span></span><br><span class="line">        <span class="built_in">console</span>.log(stat.isFile());    <span class="comment">//判断是不是文件</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用箭头函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fs.stat(path.join(__dirname,<span class="string">&#x27;file.txt&#x27;</span>),<span class="function">(<span class="params">err,stat</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(stat)</span><br><span class="line">        <span class="built_in">console</span>.log(stat.isDirectory())</span><br><span class="line">        <span class="built_in">console</span>.log(stat.isFile())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>同步操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> result = fs.statSync(path.join(__dirname));</span><br><span class="line"><span class="built_in">console</span>.log(result);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/Buffer%E5%AF%B9%E8%B1%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/Buffer%E5%AF%B9%E8%B1%A1/" class="post-title-link" itemprop="url">Buffer对象</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-17 21:42:43" itemprop="dateModified" datetime="2021-02-17T21:42:43+08:00">2021-02-17</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="Buffer对象"><a href="#Buffer对象" class="headerlink" title="Buffer对象"></a>Buffer对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buf = Buffer.from(<span class="string">&#x27;鸡你太美&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf);</span><br></pre></td></tr></table></figure>
+<p>输出结果：&lt;Buffer e9 b8 a1 e4 bd a0 e5 a4 aa e7 be 8e&gt;</p>
+<p>返回的是十六进制数，一个中文字符占三位</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buf2 = Buffer.alloc(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf2)</span><br></pre></td></tr></table></figure>
+<p>输出结果：&lt;Buffer 00 00 00 00 00 00 00 00 00 00&gt;</p>
+<p>传入的是长度，返回的是零值</p>
+<h6 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">&#x27;1&#x27;</span>,<span class="string">&#x27;2&#x27;</span>,<span class="string">&#x27;3&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr)</span><br></pre></td></tr></table></figure>
+<p>输出结果：[ ‘1’, ‘2’, ‘3’ ]</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr1)</span><br></pre></td></tr></table></figure>
+<p>输出结果：[ &lt;10 empty items&gt; ]</p>
+<p>这里为10个空值</p>
+<h6 id="Buffer类方法"><a href="#Buffer类方法" class="headerlink" title="Buffer类方法"></a>Buffer类方法</h6><h6 id="查询个数"><a href="#查询个数" class="headerlink" title="查询个数"></a>查询个数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buf = Buffer.from(<span class="string">&#x27;鸡你太美&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf);</span><br><span class="line"><span class="keyword">let</span> buf2 = Buffer.alloc(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf2)</span><br><span class="line"><span class="built_in">console</span>.log(buf.length);</span><br><span class="line"><span class="built_in">console</span>.log(buf2.length);</span><br></pre></td></tr></table></figure>
+<p>创建的buffer对象，个数不能改变</p>
+<h6 id="判断编码是否支持"><a href="#判断编码是否支持" class="headerlink" title="判断编码是否支持"></a>判断编码是否支持</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Buffer.isEncoding(<span class="string">&#x27;utf8&#x27;</span>))</span><br><span class="line"><span class="built_in">console</span>.log(Buffer.isEncoding(<span class="string">&#x27;gbk&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<p>true<br>false</p>
+<h6 id="判断是否Buffer对象"><a href="#判断是否Buffer对象" class="headerlink" title="判断是否Buffer对象"></a>判断是否Buffer对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buf2 = Buffer.alloc(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(Buffer.isBuffer(buf2));</span><br></pre></td></tr></table></figure>
+<p>输出结果：true</p>
+<h6 id="查看byte数据长度"><a href="#查看byte数据长度" class="headerlink" title="查看byte数据长度"></a>查看byte数据长度</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(Buffer.byteLength(<span class="string">&#x27;鸡你太美&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>查看编码后的byte数据的长度，不指定编码默认UTF-8</p>
+<h6 id="合并Buffer对象"><a href="#合并Buffer对象" class="headerlink" title="合并Buffer对象"></a>合并Buffer对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buf1 = Buffer.from(<span class="string">&#x27;wolfcode&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> buf2 = Buffer.from(<span class="string">&#x27;.cn&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> concatBuf = Buffer.concat([buf1,buf2]);</span><br><span class="line"><span class="built_in">console</span>.log(concatBuf.toString());</span><br></pre></td></tr></table></figure>
+<p>使用Buffer类concat方法将多个Buffer对象合并成一个，再用toString函数转成字符串类型</p>
+<h6 id="Buffer实例方法"><a href="#Buffer实例方法" class="headerlink" title="Buffer实例方法"></a>Buffer实例方法</h6><h6 id="写入Buffer数据"><a href="#写入Buffer数据" class="headerlink" title="写入Buffer数据"></a>写入Buffer数据</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> buf = Buffer.alloc(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(buf);</span><br><span class="line"><span class="keyword">let</span> len = buf.write(<span class="string">&#x27;wolfcode&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(len);</span><br><span class="line"><span class="built_in">console</span>.log(buf);</span><br><span class="line"><span class="built_in">console</span>.log(buf.toString());</span><br><span class="line"><span class="built_in">console</span>.log(buf.toJSON());</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<p>&lt;Buffer 00 00 00 00 00 00 00 00 00 00&gt;<br>8<br>&lt;Buffer 77 6f 6c 66 63 6f 64 65 00 00&gt;<br>wolfcode<br>{<br>  type: ‘Buffer’,<br>  data: [<br>    119, 111, 108, 102,<br>     99, 111, 100, 101,<br>      0,   0<br>  ]<br>}</p>
+<p>使用Buffer的实例方法write写入Buffer数据</p>
+<p>使用toString方法转成字符串类型，注意：非文本信息转成字符串会乱码，没有意义</p>
+<p>使用toJSON方法转成json类型，数据变成十进制</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/path%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/path%E6%A8%A1%E5%9D%97/" class="post-title-link" itemprop="url">path模块</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:28:53" itemprop="dateModified" datetime="2021-02-15T22:28:53+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="常用path方法"><a href="#常用path方法" class="headerlink" title="常用path方法"></a>常用path方法</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(path.sep)   <span class="comment">//获取操作系统的路径分隔符</span></span><br><span class="line"><span class="built_in">console</span>.log(path.delimiter)    <span class="comment">//获取操作系统的环境变量分隔符</span></span><br><span class="line"><span class="built_in">console</span>.log(path.basename(__filename))    <span class="comment">//获取当前文件名，包含扩展名</span></span><br><span class="line"><span class="built_in">console</span>.log(path.basename(__filename,<span class="string">&#x27;.js&#x27;</span>))    <span class="comment">//获取当前文件名，不包含扩展名</span></span><br><span class="line"><span class="built_in">console</span>.log(path.dirname(__filename))    <span class="comment">//获取当前路径</span></span><br><span class="line"><span class="built_in">console</span>.log(__dirname)    <span class="comment">//获取当前路径</span></span><br><span class="line"><span class="built_in">console</span>.log(__filename)    <span class="comment">//获取当前文件的绝对路径</span></span><br><span class="line"><span class="built_in">console</span>.log(path.extname(__filename))    <span class="comment">//获取当前文件扩展名</span></span><br><span class="line"><span class="built_in">console</span>.log(path.parse(__filename))    <span class="comment">//将文件路径解析为js对象返回</span></span><br><span class="line"><span class="built_in">console</span>.log(path.isAbsolute(__filename))    <span class="comment">//判断是否绝对路径</span></span><br><span class="line"><span class="built_in">console</span>.log(path.join(__dirname,file.txt))    <span class="comment">//拼接路径，如在下一级目录，依次添加目录名参数，以操作系统路径分隔符拼接</span></span><br><span class="line"><span class="built_in">console</span>.log(path.resolve(<span class="string">&#x27;f:&#x27;</span>,<span class="string">&#x27;fb&#x27;</span>,<span class="string">&#x27;cd&#x27;</span>))    <span class="comment">//拼接路径，第一个参数是盘符，不写默认拼接当前js文件所在盘符</span></span><br></pre></td></tr></table></figure>
+<h6 id="路径字符串和js对象转换"><a href="#路径字符串和js对象转换" class="headerlink" title="路径字符串和js对象转换"></a>路径字符串和js对象转换</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(path.parse(__filename))    </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">将文件路径字符串解析为js对象返回</span></span><br><span class="line"><span class="comment">返回结果：</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">  root: &#x27;C:\\&#x27;,</span></span><br><span class="line"><span class="comment">  dir: &#x27;C:\\Users\\lujunjie\\WebstormProjects\\untitled\\day1&#x27;,</span></span><br><span class="line"><span class="comment">  base: &#x27;path.js&#x27;,</span></span><br><span class="line"><span class="comment">  ext: &#x27;.js&#x27;,</span></span><br><span class="line"><span class="comment">  name: &#x27;path&#x27;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*\</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pathobj = &#123;</span><br><span class="line">    root: <span class="string">&#x27;C:\\&#x27;</span>,</span><br><span class="line">    dir: <span class="string">&#x27;C:\\Users\\lujunjie\\WebstormProjects\\untitled\\day1&#x27;</span>,</span><br><span class="line">    base: <span class="string">&#x27;path.js&#x27;</span>,</span><br><span class="line">    ext: <span class="string">&#x27;.js&#x27;</span>,</span><br><span class="line">    name: <span class="string">&#x27;path&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(path.format(pathobj))</span><br><span class="line"><span class="comment">//输出结果：C:\Users\lujunjie\WebstormProjects\untitled\day1\path.js</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%AE%9A%E6%97%B6%E5%99%A8/" class="post-title-link" itemprop="url">全局对象和定时器</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:28:53" itemprop="dateModified" datetime="2021-02-15T22:28:53+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="全局对象"><a href="#全局对象" class="headerlink" title="全局对象"></a>全局对象</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">global</span>.a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">global</span>.a);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br></pre></td></tr></table></figure>
+<p>使用global关键字声明全局变量</p>
+<h6 id="跟踪程序执行流程"><a href="#跟踪程序执行流程" class="headerlink" title="跟踪程序执行流程"></a>跟踪程序执行流程</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">global</span>.console.log(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.trace();</span><br></pre></td></tr></table></figure>
+<p>使用trace查看程序源码调用</p>
+<h6 id="获取执行文件目录和文件名"><a href="#获取执行文件目录和文件名" class="headerlink" title="获取执行文件目录和文件名"></a>获取执行文件目录和文件名</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(__filename);</span><br><span class="line"><span class="built_in">console</span>.log(__dirname);</span><br></pre></td></tr></table></figure>
+<p>__filename：查看执行文件名</p>
+<p>__dirname：获取执行文件所在目录</p>
+<h6 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;这个炸弹爆了！&#x27;</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h6 id="清除定时器"><a href="#清除定时器" class="headerlink" title="清除定时器"></a>清除定时器</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> timer = <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;这个炸弹爆了！&#x27;</span>)</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">clearTimeout</span>(timer);</span><br></pre></td></tr></table></figure>
+<p>不会执行。定时器不会立即执行，而是等待1秒后执行，程序不会等待1秒执行会继续往下执行，遇到clearTimeout方法会清除定时器</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">函数</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:28:53" itemprop="dateModified" datetime="2021-02-15T22:28:53+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="函数对象解构赋值"><a href="#函数对象解构赋值" class="headerlink" title="函数对象解构赋值"></a>函数对象解构赋值</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">&#123;name,age&#125;</span>) </span>&#123;</span><br><span class="line">   age += <span class="number">1</span>;</span><br><span class="line">   <span class="built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func(&#123;<span class="attr">name</span>:<span class="string">&#x27;张三&#x27;</span>,<span class="attr">age</span>:<span class="number">15</span>&#125;);</span><br><span class="line">func(&#123;<span class="attr">age</span>:<span class="number">15</span>,<span class="attr">name</span>:<span class="string">&#x27;张三&#x27;</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p>通过键值形式传参，可以避免参数传反</p>
+<h6 id="设置默认值"><a href="#设置默认值" class="headerlink" title="设置默认值"></a>设置默认值</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">&#123;name,age&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">   age += <span class="number">1</span>;</span><br><span class="line">   <span class="built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
+<p>func()相当于传入了undefined，使用默认值，默认值是空值，空值加1返回NaN</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">&#123;name=<span class="string">&#x27;xx&#x27;</span>,age= <span class="number">25</span>&#125; = &#123;&#125;</span>) </span>&#123;</span><br><span class="line">   age += <span class="number">1</span>;</span><br><span class="line">   <span class="built_in">console</span>.log(age);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func();</span><br></pre></td></tr></table></figure>
+<p>执行对象解构赋值，因为没有解构值，解构默认值要生效：name=’xx’,age= 25</p>
+<h6 id="接收用户任意值"><a href="#接收用户任意值" class="headerlink" title="接收用户任意值"></a>接收用户任意值</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">...v</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>形参使用…v，表示接收用户任意长度数值，赋值给v</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">a,b,c,...v</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(v)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p>函数里声明了形参对应传参，剩余的就是默认值v</p>
+<h6 id="数组传参"><a href="#数组传参" class="headerlink" title="数组传参"></a>数组传参</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(a,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func(...[<span class="number">1</span>,<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<p>…[1,2],这种写法是将数组里的元素拆开传入参数</p>
+<h6 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&#x27;fun1&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun1();</span><br></pre></td></tr></table></figure>
+<p>函数名省略掉，使用变量接收函数，调用函数变量加括号调用</p>
+<h6 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fun1();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fun2 = <span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;fun1&#x27;</span>);</span><br><span class="line"></span><br><span class="line">fun2();</span><br></pre></td></tr></table></figure>
+<p>箭头函数省略掉function关键字和函数名，括号后用=&gt;，后面跟上函数体，省略掉花括号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// let fun2 = function (x) &#123;</span></span><br><span class="line"><span class="comment">//    console.log(x);</span></span><br><span class="line"><span class="comment">//    console.log(&#x27;fun2&#x27;);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// fun2(1);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用箭头函数简化匿名函数</span></span><br><span class="line"><span class="keyword">let</span> fun2 = <span class="function"><span class="params">x</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(x);<span class="built_in">console</span>.log(<span class="string">&#x27;fun2&#x27;</span>);&#125;</span><br><span class="line"></span><br><span class="line">fun2(<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p>形参只有一个时括号可以省略，函数体中多个语句花括号不能省略，多个语句用分号分隔</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fun3 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> <span class="string">&#x27;fun3&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fun3())</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> fun33 = <span class="function">() =&gt;</span> <span class="string">&#x27;fun33&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(fun33())</span><br></pre></td></tr></table></figure>
+<p>没有形参时括号不能省略，return关键字也可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun4 = <span class="function"><span class="keyword">function</span> (<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">return</span> x + y</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fun4(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line"></span><br><span class="line">fun44 = <span class="function">(<span class="params">x,y</span>) =&gt;</span> x + y;</span><br><span class="line"><span class="built_in">console</span>.log(fun44(<span class="number">3</span>,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<p>多个形参括号不能省略，return关键字也可以省略</p>
+<h6 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ladies = [<span class="string">&#x27;西施&#x27;</span>,<span class="string">&#x27;王昭君&#x27;</span>,<span class="string">&#x27;貂蝉&#x27;</span>,<span class="string">&#x27;杨玉环&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ladies.forEach(function (value,index,array) &#123;</span></span><br><span class="line"><span class="comment">//    console.log(value,index,array);</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br><span class="line"></span><br><span class="line">ladies.forEach(<span class="function">(<span class="params">value,index,array</span>) =&gt;</span> <span class="built_in">console</span>.log(value,index,array))</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2&%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2&%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/%E6%9F%A5%E8%AF%A2%E5%AD%97%E7%AC%A6%E4%B8%B2&%E6%A8%A1%E6%9D%BF%E5%AD%97%E7%AC%A6%E4%B8%B2&%E5%A4%9A%E8%A1%8C%E6%96%87%E6%9C%AC/" class="post-title-link" itemprop="url">查询字符串&模板字符串</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:28:53" itemprop="dateModified" datetime="2021-02-15T22:28:53+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="查询字符串开头结尾和包括"><a href="#查询字符串开头结尾和包括" class="headerlink" title="查询字符串开头结尾和包括"></a>查询字符串开头结尾和包括</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">&#x27;e&#x27;</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str.includes(<span class="string">&#x27;f&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">&#x27;h&#x27;</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">&#x27;hello&#x27;</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">&#x27;ha&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">&#x27;h&#x27;</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">&#x27;world&#x27;</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str.endsWith(<span class="string">&#x27;hello&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>includes()：查询字符串是否包含某个字符串，有返回true,没有返回false</li>
+<li>startsWith()：检查字符串是否以某个字符串开头，是返回true,否则返回false</li>
+<li>endsWith()：检查字符串是否以某个字符串结尾，是返回true,否则返回false</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">&#x27;hello world&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">&#x27;h&#x27;</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(str.startsWith(<span class="string">&#x27;h&#x27;</span>,<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+<p>第二个参数是索引，从0开始，字符串和索引正确返回true，错误返回false</p>
+<h6 id="模板字符串"><a href="#模板字符串" class="headerlink" title="模板字符串"></a>模板字符串</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//字符串拼接</span></span><br><span class="line"><span class="comment">// function func(name,age) &#123;</span></span><br><span class="line"><span class="comment">//     return &#x27;我是&#x27; + name + &#x27;，年龄&#x27; + age;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">`我是<span class="subst">$&#123;name&#125;</span>年龄<span class="subst">$&#123;age&#125;</span>`</span>;<span class="comment">//使用模板字符串，esc键下的`键包裹</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(func(<span class="string">&#x27;张三&#x27;</span>,<span class="number">25</span>));</span><br></pre></td></tr></table></figure>
+<h6 id="多行文本"><a href="#多行文本" class="headerlink" title="多行文本"></a>多行文本</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> multiLineString = <span class="string">`</span></span><br><span class="line"><span class="string">这是一个多行文本</span></span><br><span class="line"><span class="string">这真的是一个多行文本</span></span><br><span class="line"><span class="string">你信吗</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="built_in">console</span>.log(multiLineString)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E5%BE%AA%E7%8E%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/%E5%88%86%E6%94%AF%E8%AF%AD%E5%8F%A5%E4%B8%8E%E5%BE%AA%E7%8E%AF/" class="post-title-link" itemprop="url">分支语句与循环</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:28:53" itemprop="dateModified" datetime="2021-02-15T22:28:53+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>while循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (num &lt; <span class="number">2</span>) &#123;</span><br><span class="line">    num += <span class="built_in">Math</span>.random();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;at last,num is:&#x27;</span>,num);</span><br></pre></td></tr></table></figure>
+<p>do while循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    num += <span class="built_in">Math</span>.random();</span><br><span class="line">    </span><br><span class="line">&#125; <span class="keyword">while</span>(num &lt; <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;at last,num is:&#x27;</span>,num);</span><br></pre></td></tr></table></figure>
+<p>do while先执行do语句块再判断，所以至少先执行一遍再判断是否继续循环</p>
+<p>for循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>;i &lt; <span class="number">5</span>;i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第二种写法</span></span><br><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">var</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (; j &lt; <span class="number">10</span>;) &#123;</span><br><span class="line">    sum += j;</span><br><span class="line">    j++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(sum)</span><br><span class="line"><span class="comment">//遍历对象</span></span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    a : <span class="number">1</span>,</span><br><span class="line">    b : <span class="number">2</span>,</span><br><span class="line">    c :<span class="string">&#x27;str&#x27;</span>,</span><br><span class="line">    d : <span class="literal">false</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> o) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;key:&#x27;</span>,key,<span class="string">&#x27;value:&#x27;</span>,o[key])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>switch语句</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">&#x27;str&#x27;</span>;</span><br><span class="line"><span class="keyword">switch</span>(s) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;str&#x27;</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;is str&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">false</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;is boolean false&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;default statment&#x27;</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//逐一寻找case中的表达式，满足则打印case下的语句，如果都不符合就会执行default语句</span></span><br><span class="line"><span class="comment">//多个case语句满足时，只会执行第一个</span></span><br></pre></td></tr></table></figure>
+<p>break循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i === <span class="number">5</span>) &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;i:&#x27;</span>,i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>continue跳出本次循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>;i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i === <span class="number">5</span>) &#123;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;i:&#x27;</span>,i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/14/%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/14/%E6%A8%A1%E5%9D%97/" class="post-title-link" itemprop="url">模块</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-14 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-14T00:00:00+08:00">2021-02-14</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-15 22:28:53" itemprop="dateModified" datetime="2021-02-15T22:28:53+08:00">2021-02-15</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/node%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">node基础</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h6 id="自定义模块和导入导出"><a href="#自定义模块和导入导出" class="headerlink" title="自定义模块和导入导出"></a>自定义模块和导入导出</h6><p>导出模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports.sum = sum;</span><br><span class="line"><span class="comment">// console.log(module.exports);</span></span><br></pre></td></tr></table></figure>
+<p>引用模块</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="built_in">require</span>(<span class="string">&#x27;./pretty.js&#x27;</span>);</span><br><span class="line"><span class="comment">// console.log(p)</span></span><br><span class="line"><span class="built_in">console</span>.log(p.sum(<span class="number">1</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<p>加载js文件后缀可以省略，会从.js、.json、.node顺序依次加载</p>
+<h6 id="引入内置模块"><a href="#引入内置模块" class="headerlink" title="引入内置模块"></a>引入内置模块</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&quot;fs&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">高冷俊</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div> --><!-- 设置站点底部信息 -->
+<!-- <a href="https://icp.gov.moe/?keyword=20180708" rel="external nofollow noreferrer" target="_blank" data-pjax-state="" style="
+    border-bottom-width: 0px;
+">萌 ICP 备 20180708 号</a> -->
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("12/31/2019 23:54:40");//此处修改你的建站时间，注意格式
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "小站在混沌中存活了 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <div class="pjax">
+
+
+    </div>
+
+
+
+</body>
+<!-- 全站左下角音乐播放器 -->
+<!-- 引用依赖 -->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+
+  <!-- 我使用的APlayer本体 -->
+  <div class="aplayer"
+    data-mutex="true"
+    data-id="332064694"
+    data-server="netease"
+    data-type="playlist"
+    data-fixed="true"
+    data-autoplay="false"
+    data-order="random"
+    data-volume="0.55"
+    data-theme="#cc543a"
+    data-preload="auto" >
+    </div>
+  <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+</html>

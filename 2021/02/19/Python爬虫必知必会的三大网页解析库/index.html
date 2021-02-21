@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","version":"8.2.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="掌握这三大网页解析库，基本可以解决100%网页提取问题xpath 最方便最快捷的解析方式  解析网页xpath是首选，它易读，方便书写，使用起来非常简单。使用谷歌或edge浏览器可以打开元素，直接书写xpth，所见即所得。 书写xpath语法，所选节点会在html中实时高亮显示。   xpath语法理解起来也很简单，“&#x2F;”表示选择直接子节点，例如：&#x2F;div&#x2F;p，p是div下的直接子节点；“&#x2F;&#x2F;”表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫必知必会的三大网页解析库">
+<meta property="og:url" content="http://example.com/2021/02/19/Python%E7%88%AC%E8%99%AB%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%9A%84%E4%B8%89%E5%A4%A7%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%BA%93/index.html">
+<meta property="og:site_name" content="高冷俊的技术博客">
+<meta property="og:description" content="掌握这三大网页解析库，基本可以解决100%网页提取问题xpath 最方便最快捷的解析方式  解析网页xpath是首选，它易读，方便书写，使用起来非常简单。使用谷歌或edge浏览器可以打开元素，直接书写xpth，所见即所得。 书写xpath语法，所选节点会在html中实时高亮显示。   xpath语法理解起来也很简单，“&#x2F;”表示选择直接子节点，例如：&#x2F;div&#x2F;p，p是div下的直接子节点；“&#x2F;&#x2F;”表">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/02/7c45bf814645704c.png">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/02/1c913be1185cd7a6.png">
+<meta property="og:image" content="https://ftp.bmp.ovh/imgs/2021/02/5b130571753a096a.png">
+<meta property="article:published_time" content="2021-02-19T13:53:06.000Z">
+<meta property="article:modified_time" content="2021-02-20T10:22:25.211Z">
+<meta property="article:author" content="高冷俊">
+<meta property="article:tag" content="python爬虫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ftp.bmp.ovh/imgs/2021/02/7c45bf814645704c.png">
+
+
+<link rel="canonical" href="http://example.com/2021/02/19/Python%E7%88%AC%E8%99%AB%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%9A%84%E4%B8%89%E5%A4%A7%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%BA%93/">
+
+
+<script data-pjax class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script><script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+<title>Python爬虫必知必会的三大网页解析库 | 高冷俊的技术博客</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">高冷俊的技术博客</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">专注于编程学习，爬虫研究</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-relaxing-moment"><a href="/music/" rel="section"><i class="fa fa-coffee fa-fw"></i>放松时刻</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%8C%E6%8F%A1%E8%BF%99%E4%B8%89%E5%A4%A7%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%BA%93%EF%BC%8C%E5%9F%BA%E6%9C%AC%E5%8F%AF%E4%BB%A5%E8%A7%A3%E5%86%B3100-%E7%BD%91%E9%A1%B5%E6%8F%90%E5%8F%96%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">掌握这三大网页解析库，基本可以解决100%网页提取问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#xpath"><span class="nav-number">1.1.</span> <span class="nav-text">xpath</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pyquery"><span class="nav-number">1.2.</span> <span class="nav-text">pyquery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#re-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="nav-number">1.3.</span> <span class="nav-text">re 正则表达式</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">高冷俊</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="/l119520@outlook.com" title="E-Mail → l119520@outlook.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/19/Python%E7%88%AC%E8%99%AB%E5%BF%85%E7%9F%A5%E5%BF%85%E4%BC%9A%E7%9A%84%E4%B8%89%E5%A4%A7%E7%BD%91%E9%A1%B5%E8%A7%A3%E6%9E%90%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="高冷俊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="高冷俊的技术博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python爬虫必知必会的三大网页解析库
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-02-19 21:53:06" itemprop="dateCreated datePublished" datetime="2021-02-19T21:53:06+08:00">2021-02-19</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-02-20 18:22:25" itemprop="dateModified" datetime="2021-02-20T18:22:25+08:00">2021-02-20</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python%E7%88%AC%E8%99%AB/" itemprop="url" rel="index"><span itemprop="name">python爬虫</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="掌握这三大网页解析库，基本可以解决100-网页提取问题"><a href="#掌握这三大网页解析库，基本可以解决100-网页提取问题" class="headerlink" title="掌握这三大网页解析库，基本可以解决100%网页提取问题"></a>掌握这三大网页解析库，基本可以解决100%网页提取问题</h2><h3 id="xpath"><a href="#xpath" class="headerlink" title="xpath"></a>xpath</h3><ul>
+<li>最方便最快捷的解析方式</li>
+</ul>
+<p>解析网页xpath是首选，它易读，方便书写，使用起来非常简单。使用谷歌或edge浏览器可以打开元素，直接书写xpth，所见即所得。</p>
+<p>书写xpath语法，所选节点会在html中实时高亮显示。<br><img src="https://ftp.bmp.ovh/imgs/2021/02/7c45bf814645704c.png" alt="xpath演示"></p>
+<!-- ![xpath演示](Python爬虫必知必会的三大网页解析库/xpath.png) -->
+
+<p>xpath语法理解起来也很简单，“/”表示选择直接子节点，例如：/div/p，p是div下的直接子节点；“//”表示选择非直接子节点，例如：/div//p，p和div之间还有其它节点。</p>
+<p>使用“/”选择可以联想到电脑里的资源管理器的资源路径，一个意思，“//”在xpath选择中最常用，“/”逐级选择，使用“//”跳选。</p>
+<p>//div[@class=”list”]//a//p，中括号里的写法是指定该div的class属性，进一步限定选择。最后的p标签才是我们选择的对象，如果你要选择p标签的文本，那么后面还需要跟上“/text()”，完整写法：//div[@class=”list”]//a//p/text()</p>
+<p>爬取url是家常便饭，xpath获取某标签中的url也是非常容易，来看看吧！<br><img src="https://ftp.bmp.ovh/imgs/2021/02/1c913be1185cd7a6.png" alt="xpath获取url"></p>
+<!-- ![xpath演示](Python爬虫必知必会的三大网页解析库/xpath选择url.png) -->
+<p>是的，只需要在最后的标签加上“/@href”即可获取href属性对应的url。</p>
+<p>非常容易！</p>
+<p>在这里仅作几个例子演示，xpath选择方式非常多，掌握其中常用几种，基本可以解决99%的网页。</p>
+<p>想完整学习xpath，可以直接通过搜索引擎搜索，这样的视频教程和博客文档多如牛毛，在python语言中，使用xpath解析网页，首先安装使用lxml模块进行字符串转换成html，因为xpath只能处理html文档，在这里我将我学习lxml和xpath笔记分享出来。</p>
+<p><a target="_blank" rel="noopener" href="https://share.mubu.com/doc/d3yY--gYM">xpath语法</a> <a target="_blank" rel="noopener" href="https://share.mubu.com/doc/3XGR5RgY0Yk">lxml提取数据</a></p>
+<h3 id="pyquery"><a href="#pyquery" class="headerlink" title="pyquery"></a>pyquery</h3><ul>
+<li>最佳CSS选择器模块</li>
+</ul>
+<p>pyquery是个非常不错的css选择器模块，熟知前端的都知道，css选择器有多方便，不亚于xpath。bs4虽然很受欢迎，很主流，但选择节点太繁琐，步骤多。pyquery真心不错，不使用xpath，pyquery是我最爱使用的网页解析库，它有多好用来演示下。</p>
+<p><img src="https://ftp.bmp.ovh/imgs/2021/02/5b130571753a096a.png" alt="pyquery"></p>
+<!-- ![xpath演示](Python爬虫必知必会的三大网页解析库/pyquery选择影评作者.png) -->
+<ul>
+<li>爬取豆瓣影评作者</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyquery <span class="keyword">import</span> PyQuery <span class="keyword">as</span> pq</span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36 Edg/88.0.705.68&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line">item_list = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">100</span>,<span class="number">20</span>):</span><br><span class="line">    url = <span class="string">f&#x27;https://movie.douban.com/review/best/?start=<span class="subst">&#123;i&#125;</span>&#x27;</span></span><br><span class="line"></span><br><span class="line">    r = httpx.get(url,headers = headers).text</span><br><span class="line"></span><br><span class="line">    <span class="comment"># pyquery解析</span></span><br><span class="line">    doc = pq(r)</span><br><span class="line">    items = doc(<span class="string">&#x27;.review-list .main-hd a.name&#x27;</span>)</span><br><span class="line">    <span class="keyword">for</span> author <span class="keyword">in</span> items.items():</span><br><span class="line">        item_list.append(author.text())</span><br><span class="line"></span><br><span class="line">print(item_list)</span><br></pre></td></tr></table></figure>
+<p>打印结果：</p>
+<ul>
+<li>[‘刷鞋大王’, ‘R荣十二’, ‘珍珠奶猹’, ‘朝暮雪’, ‘天下行走’, ‘保温杯喝冷水’, ‘枨不戒’, ‘難捨難分’, ‘江湖骗子’, ‘筷子兄弟-鸡腿’, ‘看电影看到死’, ‘上下楼梯靠右走’, ‘lanrachel’, ‘沉睡的小鹏’, ‘粉粿症候群’, ‘马尾鱼’, ‘阿甘正二’, ‘小良’, ‘之方’, ‘Fenster’, ‘咦，那个胖大海’, ‘错是世界不是我’, ‘胡萝卜糊了’, ‘应该没什么不同’, ‘雨梨’, ‘Gaaitung-Hok’, ‘黄黄国王’, ‘Hoesdont_tryme’, ‘啊？啊！’, ‘莎士比亚的妹妹’, ‘诸事大吉’, ‘岁月静好’, ‘大葱’, ‘沅有芷兮’, ‘倩儿的小岛’, ‘滔滔涛涛’, ‘地下游艺宫’, ‘沐如蓝’, ‘元宵灯会’, ‘正离子-雪’, ‘ROSES’, ‘Thelonious’, ‘王兆鑫-DOC’, ‘陈年老大’, ‘Kubrick’, ‘追剧练习生’, ‘奈此朱梁跋扈何’, ‘光’, ‘ououou’, ‘Yilianmengbi🍁’]</li>
+</ul>
+<p>pyquery仅用了三行代码，第一行代码css选择，第二行代码遍历出所有作者名称添加到列表，简单高效！</p>
+<h3 id="re-正则表达式"><a href="#re-正则表达式" class="headerlink" title="re 正则表达式"></a>re 正则表达式</h3><ul>
+<li>数据过滤提取万金油</li>
+</ul>
+<p>你是谁？你旁边都有啥？</p>
+<p>这就是正则表达式提取数据的主要思路。</p>
+<ul>
+<li>以豆瓣音乐为例</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> httpx</span><br><span class="line">headers = &#123;</span><br><span class="line"><span class="string">&#x27;user-agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36 Edg/88.0.705.74&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Cookie&#x27;</span>: <span class="string">&#x27;bid=BrkWGYAPap4; __yadk_uid=lw6P9KtcK917gHOxQ7KFBg9ZAO6qM2Zc; _vwo_uuid_v2=D455FFECD444260935D06DABA5027F6F2|432066f1de62232e73a12fc1b7d76cd5; __gads=ID=79f66f4cd94a5914-2273543234c50089:T=1608093744:RT=1608093744:S=ALNI_MYwKkM1dNWT2eboajA5R_tpqDKMoQ; ll=&quot;118259&quot;; viewed=&quot;2995812_1401853_1431596_6816154_3040149&quot;; ct=y; gr_user_id=8bb1c9a9-726f-41ce-a3e1-ac45518dccfb; __utma=30149280.451464343.1608093740.1613747695.1613807914.17; __utmc=30149280; __utmz=30149280.1613807914.17.9.utmcsr=cn.bing.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmt=1; gr_session_id_22c937bbd8ebd703f2d8e9445f7dfd03=167484ac-1d68-49da-9138-6c24dc423db6; gr_cs1_167484ac-1d68-49da-9138-6c24dc423db6=user_id%3A0; __utmt_douban=1; ap_v=0,6.0; gr_session_id_22c937bbd8ebd703f2d8e9445f7dfd03_167484ac-1d68-49da-9138-6c24dc423db6=true; _pk_ref.100001.afe6=%5B%22%22%2C%22%22%2C1613807982%2C%22https%3A%2F%2Fcn.bing.com%2F%22%5D; _pk_ses.100001.afe6=*; _pk_id.100001.afe6=0cde17f985e0e19a.1608093739.8.1613808129.1608277773.; __utmb=30149280.5.10.1613807914&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line">r = httpx.get(<span class="string">&#x27;https://music.douban.com/chart&#x27;</span>,headers = headers).text</span><br><span class="line">result = re.findall(<span class="string">&#x27;&lt;a href=&quot;javascript:;&quot;&gt;(.*?)&lt;/a&gt;&#x27;</span>,r)</span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<ul>
+<li>[‘无名曲’, ‘PAP’, ‘酒色器迷 （寒山尺八 叁）’, ‘Ⅷ’, ‘五楼’, ‘Fade out’, ‘162-气人的小孩-4500’, ‘ARASHI’, ‘想告诉你她已经离开’, ‘致青春-Youth’, ‘近视-2021.01’, ‘《shamed》伴奏demo’, ‘风吟 Wind Singing’, ‘北沙滩’, ‘寻光’, ‘RED（五首钢琴曲以及念诗）’, ‘十一月 山间晚祷（古筝独奏 陈虹蕗 ）’, ‘海战Moba_乡村_Boss’, ‘阳春（神奇秘谱）丝弦-丹泉琴-2021-01-24_20-40’, ‘rocket’]</li>
+</ul>
+<p>python中的正则表达式是re模块，在爬虫中，使用最多的方法就是findall函数，顾名思义查找全部。括号里填入的第一个参数就是正则表达式，第二个参数是待匹配的文本。</p>
+<p>‘&lt;a href=”javascript:;”&gt;(.*?)</a>‘，这段正则中的圆括号里才是我们要提取的内容，而圆括号外只是参考，告诉正则，你要提取的内容它的左边是什么，右边是什么。圆括号里的“.*?”,点表示匹配任意符号，星号匹配零次或多次，问号是非贪婪模式匹配。</p>
+<p>很多人觉得正则表达式复杂，因为正则表达式的元字符非常多。什么是元字符？“.*?”这三个就是元字符，它们分别匹配某一类型的数据。再比如，一个“+”在正则中就表示匹配一次或多次，“\d”就表示匹配数字。“\D”就表示匹配非数字……元字符太多了，这里介绍不完的。学习正则不必把正则所有元字符死记硬背，只需要掌握正则在不同编程语言中的语法使用即可，当提取某一类型的数据时，直接搜索引擎搜索好了，这样的资料太多了，很好找，使用起来就像查字典般容易。</p>
+<p>正则搜索内容最高效，它不仅仅只针对网页，任何文本字符串类型都支持，所以说它是万金油。xpath提取网页数据是首选，如果html文档中的数据嵌入在javascript标签中，xpath就无能为力，何以解忧？唯有正则。</p>
+<p>最后，奉上我的正则学习笔记。<br><a target="_blank" rel="noopener" href="https://share.mubu.com/doc/7HV42Ee9a-H">python正则表达式学习笔记</a></p>
+<p>以上就是我使用python爬虫最推荐的三大网页解析库，熟练掌握任何网页不在话下，轻而易举过滤数据，精确提取。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python%E7%88%AC%E8%99%AB/" rel="tag"># python爬虫</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/19/node.js%E5%88%86%E5%8F%B7%E9%97%AE%E9%A2%98/" rel="prev" title="node.js分号问题">
+                  <i class="fa fa-chevron-left"></i> node.js分号问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">高冷俊</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div> --><!-- 设置站点底部信息 -->
+<!-- <a href="https://icp.gov.moe/?keyword=20180708" rel="external nofollow noreferrer" target="_blank" data-pjax-state="" style="
+    border-bottom-width: 0px;
+">萌 ICP 备 20180708 号</a> -->
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("12/31/2019 23:54:40");//此处修改你的建站时间，注意格式
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "小站在混沌中存活了 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@next-theme/pjax@0.4.0/pjax.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script><script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '.page-configurations',
+    '.main-inner',
+    '.post-toc-wrap',
+    '.languages',
+    '.pjax'
+  ],
+  analytics: false,
+  cacheBust: false,
+  scrollRestoration: false,
+  scrollTo: !CONFIG.bookmark.enable
+});
+
+document.addEventListener('pjax:success', () => {
+  pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  const hasTOC = document.querySelector('.post-toc');
+  document.querySelector('.sidebar-inner').classList.toggle('sidebar-nav-active', hasTOC);
+  document.querySelector(hasTOC ? '.sidebar-nav-toc' : '.sidebar-nav-overview').click();
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+  
+
+
+
+
+
+
+  
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <div class="pjax">
+
+
+    </div>
+
+
+
+</body>
+<!-- 全站左下角音乐播放器 -->
+<!-- 引用依赖 -->
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/meting@1.2.0/dist/Meting.min.js"></script>
+
+  <!-- 我使用的APlayer本体 -->
+  <div class="aplayer"
+    data-mutex="true"
+    data-id="332064694"
+    data-server="netease"
+    data-type="playlist"
+    data-fixed="true"
+    data-autoplay="false"
+    data-order="random"
+    data-volume="0.55"
+    data-theme="#cc543a"
+    data-preload="auto" >
+    </div>
+  <!--如果将本体放在body里面导致页面加载出现问题，请尝试放到body体后面-->
+</html>
